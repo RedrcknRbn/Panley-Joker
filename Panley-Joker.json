@@ -3,7 +3,7 @@
 	"name": "Panley Joker Mod",
 	"display_name": "PJ",
 	"author": ["RedrcknRbn", "Panley"],
-	"description": "Mod that adds a joker of Panley, x0.8 mult and 3 cash per joker in hand.",
+	"description": "Mod that adds a joker of Panley, 0.8x mult and 3 cash per joker in hand.",
 	"prefix": "pjm",
 	"main_file": "Main.lua",
 	"priority": -100,

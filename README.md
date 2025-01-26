@@ -8,7 +8,7 @@ This mod requires version 1.0.0 or later of [Steamodded](https://github.com/Stea
 
 Once Steamodded is installed, download the latest release of the mod and extract it to your ``%appdata%/Balatro/mods`` folder.
 
-Then, download this mod at the [Releases](https://github.com/RedrcknRbn/Panley-Joker/releases) page!
+Then, download this mod at the [Releases](https://github.com/RedrcknRbn/Panley-Joker/releases) page, and also extract it to your ``%appdata%/Balatro/mods`` folder.
 
 # Credits
 Idea and Art by [Panley](https://bsky.app/profile/panley.blue/post/3lgk24me62s2v)

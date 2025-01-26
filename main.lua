@@ -5,7 +5,7 @@ SMODS.Atlas {
 	py = 95
 }
 
-SMODS.Joker { -- Joker that gives .x75 multiplier and +2 Cash per Joker Card in player's deck. The .x75 is multiplicitive, so the more Jokers, the more its diminished
+SMODS.Joker {
     key = 'panleyjoker',
     loc_txt = {
         name = 'Panler',
@@ -17,7 +17,7 @@ SMODS.Joker { -- Joker that gives .x75 multiplier and +2 Cash per Joker Card in 
             "{C:inactive}(Currently {C:red}+#4#{C:inactive} Cash)"
         }
     },
-    config = { extra = { mult = 0.75, x_mult = 1, cash_per_joker = 2 } },
+    config = { extra = { mult = 0.8, x_mult = 1, cash_per_joker = 3 } },
     rarity = 2,
     atlas = 'PanleyJoker',
     pos = { x = 0, y = 0 },
@@ -27,32 +27,22 @@ SMODS.Joker { -- Joker that gives .x75 multiplier and +2 Cash per Joker Card in 
     eternal_compat = true,
     blueprint_compat = true,
     loc_vars = function(self, info_queue, card)
-        if not self.ability then
-            self.ability = { extra = { mult = 0.75, cash_per_joker = 2 } }
-        end
         local joker_count = #G.jokers.cards
-        local mult = self.ability.extra.mult
-        local cash_per_joker = self.ability.extra.cash_per_joker
-        local current_mult = mult ^ joker_count
-        local current_cash = cash_per_joker * joker_count
-        return { vars = { mult, cash_per_joker, current_mult, current_cash } }
+        local current_mult = 0.8 ^ joker_count
+        local current_cash = 3 * joker_count
+        return { vars = { 0.8, 3, current_mult, current_cash } }
     end,
     calculate = function(self, card, context)
-		if not self.ability then
-            self.ability = { extra = { mult = 0.75, cash_per_joker = 2 } }
+		if context.joker_main then
+            local joker_count = #G.jokers.cards
+            local current_mult = 0.8 ^ joker_count
+            local current_cash = 3 * joker_count
+    
+            return {
+                xmult = current_mult,
+                dollars = current_cash,
+            }
         end
-        local joker_count = #G.jokers.cards
-        local mult = self.ability.extra.mult
-        local cash_per_joker = self.ability.extra.cash_per_joker
-        local current_mult = mult ^ joker_count
-        local current_cash = cash_per_joker * joker_count
-	
-		return {
-			mult_mod = current_mult,
-			cash_mod = current_cash,
-			card = self,
-			message = localize { type = 'variable', key = 'a_mult_cash', vars = { current_mult, current_cash } }
-		}
     end,
 }
 

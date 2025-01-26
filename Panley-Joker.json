@@ -3,13 +3,13 @@
 	"name": "Panley Joker Mod",
 	"display_name": "PJ",
 	"author": ["RedrcknRbn", "Panley"],
-	"description": "Mod that adds a joker of Panley",
+	"description": "Mod that adds a joker of Panley, x0.8 mult and 3 cash per joker in hand.",
 	"prefix": "pjm",
 	"main_file": "Main.lua",
 	"priority": -100,
 	"badge_colour": "DF6CE3",
 	"badge_text_colour": "FFFFFF",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"dependencies": [
 		"Lovely (>=0.6)"
     ]

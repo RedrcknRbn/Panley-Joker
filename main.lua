@@ -27,7 +27,10 @@ SMODS.Joker {
     eternal_compat = true,
     blueprint_compat = true,
     loc_vars = function(self, info_queue, card)
-        local joker_count = #G.jokers.cards
+        local joker_count = 0
+        if G and G.jokers then
+            joker_count = #G.jokers.cards
+        end
         local current_mult = 0.8 ^ joker_count
         local current_cash = 3 * joker_count
         return { vars = { 0.8, 3, current_mult, current_cash } }

@@ -14,7 +14,7 @@ SMODS.Joker {
             "and {C:money}$#2#{} per",
             "each {C:attention}Joker{} card",
             "{C:inactive}(Currently {C:red}X#3#{C:inactive} Mult)",
-            "{C:inactive}(Currently {C:red}+#4#{C:inactive} Cash)"
+            "{C:inactive}(Currently {C:money}+#4#{C:inactive} Cash)"
         }
     },
     config = { extra = { mult = 0.8, x_mult = 1, cash_per_joker = 3 } },
